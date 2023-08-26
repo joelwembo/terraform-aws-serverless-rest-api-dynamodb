@@ -402,3 +402,17 @@ $ terraform taint aws_api_gateway_deployment.example
 This command flags that this object must be re-created in the next Terraform plan, so a subsequent terraform apply will then replace the deployment and thus activate the latest configuration changes.
 
 Please note that this "re-deployment" will cause some downtime, since Terraform will need to delete the stage and associated deployment before re-creating it. Downtime can be avoided by triggering the deployment action via the API Gateway console, outside of Terraform. The approach covered in this guide intentionally minimizes the need to amend the API Gateway configuration over time to mitigate this limitation. Better support for this workflow will be added to Terraform's AWS provider in a future release.
+
+# Compilation
+
+sam package --template-file sam-template.yaml --output-template-file sam-deploy.yaml --s3-bucket $SAM_CODE_BUCKET
+
+
+>sam package --template-file sam-template.yaml --output-template-file sam-deploy.yaml --s3-bucket prodxcloud-terraform-state
+        Uploading to 823a67346e42ff8e68d81d8c3e069934  1412112 / 1412112  (100.00%)
+        Uploading to c19477640ae82382c23af8c9f5937a93  868 / 868  (100.00%)
+        Uploading to 1a265dc3297bf39f7edd961edf2a5e24  715 / 715  (100.00%)
+
+terraform init
+terraform plan
+terraform deploy

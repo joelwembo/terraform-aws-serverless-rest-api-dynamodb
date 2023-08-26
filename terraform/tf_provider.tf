@@ -10,7 +10,7 @@ provider "aws" {
 # ----------------------------------------------------------------------
 terraform {
   backend "s3" {
-    bucket         = "my-terraform-state"
+    bucket         = "prodxcloud-terraform-state"
     key            = "employees-api.tfstate"
     dynamodb_table = "my-terraform-lock"
     region         = "ap-southeast-1"

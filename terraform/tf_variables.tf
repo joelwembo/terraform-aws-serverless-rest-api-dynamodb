@@ -33,5 +33,5 @@ variable "lambda_invoke_uri_prefix" {
 # S3 bucket for converted SAM templates
 # ----------------------------------------------------------------------
 variable "sam_code_bucket" {
-  default = "my-sam-code-bucket"
+  default = "prodxcloud-sam-code"
 }
