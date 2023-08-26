@@ -5,6 +5,8 @@ const spinner = ora({
 const boxen = require('boxen');
 const moment = require('moment');
 var AWS = require('aws-sdk');
+require('dotenv').config()
+console.log(process.env)
 var docClient = new AWS.DynamoDB.DocumentClient({ convertEmptyValues: true, region: 'ap-southeast-1' });
 const fs = require('fs');
 

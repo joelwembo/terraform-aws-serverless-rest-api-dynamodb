@@ -9,6 +9,5 @@ output "api_invoke_url" {
 # API key
 # ----------------------------------------------------------------------
 output "api_key" {
-  value = aws_api_gateway_api_key.api_key.value
-  sensitive = true
+  value     = nonsensitive(aws_api_gateway_api_key.api_key.value)
 }
