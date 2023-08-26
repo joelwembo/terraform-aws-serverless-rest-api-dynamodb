@@ -47,7 +47,7 @@ Resources:
       Description: !Sub '${AppName} Lambda Layer'
       ContentUri: lambda-layer/
       CompatibleRuntimes:
-        - nodejs12.x
+        - nodejs16.x
       RetentionPolicy: Retain
   LambdaRole:
     Type: AWS::IAM::Role
@@ -92,7 +92,7 @@ Resources:
     Properties:
       FunctionName: !Sub '${AppName}-get-data'
       Handler: index.lambdaHandler
-      Runtime: nodejs18.x
+      Runtime: nodejs16.x
       Description: Get employee data from Dynamo DB
       CodeUri: functions/get-data/
       Role:
@@ -102,7 +102,7 @@ Resources:
     Properties:
       FunctionName: !Sub '${AppName}-put-data'
       Handler: index.lambdaHandler
-      Runtime: nodejs18.x
+      Runtime: nodejs16.x
       Description: Add employee data to Dynamo DB
       CodeUri: functions/put-data/
       Role:
