@@ -13,7 +13,7 @@ terraform {
     bucket         = "my-terraform-state"
     key            = "employees-api.tfstate"
     dynamodb_table = "my-terraform-lock"
-    region         = "ap-southeast-2"
+    region         = "ap-southeast-1"
     encrypt        = "true"
   }
 }

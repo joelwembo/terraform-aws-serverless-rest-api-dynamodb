@@ -5,7 +5,7 @@ const spinner = ora({
 const boxen = require('boxen');
 const moment = require('moment');
 var AWS = require('aws-sdk');
-var docClient = new AWS.DynamoDB.DocumentClient({ convertEmptyValues: true, region: 'ap-southeast-2' });
+var docClient = new AWS.DynamoDB.DocumentClient({ convertEmptyValues: true, region: 'ap-southeast-1' });
 const fs = require('fs');
 
 async function importEmployees() {

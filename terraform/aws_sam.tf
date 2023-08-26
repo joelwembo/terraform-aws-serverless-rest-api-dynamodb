@@ -18,5 +18,5 @@ resource "aws_cloudformation_stack" "employees_api_sam_stack" {
     AppName = var.app_name
   }
 
-  template_url = "https://${var.sam_code_bucket}.s3-ap-southeast-2.amazonaws.com/${aws_s3_bucket_object.sam_deploy_object.id}"
+  template_url = "https://${var.sam_code_bucket}.s3-ap-southeast-1.amazonaws.com/${aws_s3_bucket_object.sam_deploy_object.id}"
 }

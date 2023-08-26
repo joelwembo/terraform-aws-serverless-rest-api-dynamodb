@@ -2,7 +2,7 @@
 # Default AWS Region used to deploy resources
 # ----------------------------------------------------------------------
 variable "aws_region" {
-  default = "ap-southeast-2"
+  default = "ap-southeast-1"
 }
 
 # ----------------------------------------------------------------------
@@ -26,7 +26,7 @@ variable "api_lambda_functions" {
 # Lambda invoke URI prefix used in openAPI specification
 # ----------------------------------------------------------------------
 variable "lambda_invoke_uri_prefix" {
-  default = "arn:aws:apigateway:ap-southeast-2:lambda:path/2015-03-31/functions"
+  default = "arn:aws:apigateway:ap-southeast-1:lambda:path/2015-03-31/functions"
 }
 
 # ----------------------------------------------------------------------
