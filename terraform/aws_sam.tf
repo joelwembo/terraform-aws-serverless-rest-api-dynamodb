@@ -4,8 +4,8 @@
 resource "aws_s3_bucket_object" "sam_deploy_object" {
   bucket = var.sam_code_bucket
   key    = "sam-deploy-templates/${var.app_name}-deploy-${timestamp()}.yaml"
-  source = "../sam/sam-deploy.yaml"
-  etag   = filemd5("../sam/sam-deploy.yaml")
+  source = "../sam/deploy.yaml"
+  etag   = filemd5("../sam/deploy.yaml")
 }
 
 # ----------------------------------------------------------------------

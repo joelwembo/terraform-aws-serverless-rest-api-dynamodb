@@ -48,7 +48,7 @@ Resources:
         Fn::Sub: ${AppName}-lambda-layer
       Description:
         Fn::Sub: ${AppName} Lambda Layer
-      ContentUri: s3://prodxcloud-terraform-state/823a67346e42ff8e68d81d8c3e069934
+      ContentUri: s3://prodxcloud-terraform-state/8b460ca84d304597ab4b7ce9f99a07df
       CompatibleRuntimes:
       - nodejs16.x
       RetentionPolicy: Retain

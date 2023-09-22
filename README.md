@@ -13,7 +13,7 @@ This is a slightly-opinionated guide, which chooses to ignore the built-in versi
 
 # Compilation
 
-sam package --template-file sam-template.yaml --output-template-file sam-deploy.yaml --s3-bucket $SAM_CODE_BUCKET
+sam package --template-file template.yaml --output-template-file deploy.yaml --s3-bucket $SAM_CODE_BUCKET
 
 
 terraform init
