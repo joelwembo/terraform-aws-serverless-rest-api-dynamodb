@@ -5,11 +5,18 @@ variable "aws_region" {
   default = "ap-southeast-1"
 }
 
+
+# S3 bucket for converted SAM templates
+variable "sam_code_bucket" {
+  default = "CloudApp-ecommerce-98"
+}
+
+
 # ----------------------------------------------------------------------
 # Application name used for naming resources
 # ----------------------------------------------------------------------
 variable "app_name" {
-  default = "employees-api"
+  default = "products-api"
 }
 
 # ----------------------------------------------------------------------
@@ -17,8 +24,10 @@ variable "app_name" {
 # ----------------------------------------------------------------------
 variable "api_lambda_functions" {
   default = [
-    "get-data",
-    "put-data"
+    "get-controller",
+    "put-controller",
+    "patch-controller",
+    "delete-controller"
   ]
 }
 
@@ -29,9 +38,4 @@ variable "lambda_invoke_uri_prefix" {
   default = "arn:aws:apigateway:ap-southeast-1:lambda:path/2015-03-31/functions"
 }
 
-# ----------------------------------------------------------------------
-# S3 bucket for converted SAM templates
-# ----------------------------------------------------------------------
-variable "sam_code_bucket" {
-  default = "cloudapp-sam-code"
-}
+

@@ -90,21 +90,21 @@ Resources:
   GetData:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub '${AppName}-get-data'
+      FunctionName: !Sub '${AppName}-get-controller'
       Handler: index.lambdaHandler
       Runtime: nodejs16.x
       Description: Get product data from Dynamo DB
-      CodeUri: functions/get-data/
+      CodeUri: functions/get-controller/
       Role:
         Fn::GetAtt: LambdaRole.Arn
   PutData:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub '${AppName}-put-data'
+      FunctionName: !Sub '${AppName}-put-controller'
       Handler: index.lambdaHandler
       Runtime: nodejs16.x
       Description: Add product data to Dynamo DB
-      CodeUri: functions/put-data/
+      CodeUri: functions/put-controller/
       Role:
         Fn::GetAtt: LambdaRole.Arn
 

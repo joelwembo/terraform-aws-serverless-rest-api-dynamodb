@@ -3,7 +3,7 @@
 # ----------------------------------------------------------------------
 data "aws_cloudformation_export" "api_lambda_arn_cfn_exports" {
   for_each   = toset(var.api_lambda_functions)
-  depends_on = [aws_cloudformation_stack.employees_api_sam_stack]
+  depends_on = [aws_cloudformation_stack.products_api_sam_stack]
   name       = "${var.app_name}-${each.value}-arn"
 }
 
