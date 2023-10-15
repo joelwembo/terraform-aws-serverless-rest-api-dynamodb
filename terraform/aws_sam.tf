@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------
-# SAM deploy template S3 Object
+# Terraform Deploy template S3 Object from SAM File
 # ----------------------------------------------------------------------
 resource "aws_s3_bucket_object" "sam_deploy_object" {
   bucket = var.sam_code_bucket
@@ -11,7 +11,7 @@ resource "aws_s3_bucket_object" "sam_deploy_object" {
 # ----------------------------------------------------------------------
 # SAM Stack 
 # ----------------------------------------------------------------------
-resource "aws_cloudformation_stack" "employees_api_sam_stack" {
+resource "aws_cloudformation_stack" "products_api_sam_stack" {
   name         = "${var.app_name}-sam-stack"
   capabilities = ["CAPABILITY_NAMED_IAM", "CAPABILITY_AUTO_EXPAND"]
   parameters = {
