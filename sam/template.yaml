@@ -113,9 +113,9 @@ Outputs:
     Description: ARN of Get Data Lambda Function
     Value: !GetAtt GetData.Arn
     Export:
-      Name: !Sub '${AppName}-get-data-arn'
+      Name: !Sub '${AppName}-get-controller-arn'
   PutDataArn:
     Description: ARN of Put Data Lambda Function
     Value: !GetAtt PutData.Arn
     Export:
-      Name: !Sub '${AppName}-put-data-arn'
+      Name: !Sub '${AppName}-put-controller-arn'

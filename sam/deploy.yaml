@@ -130,7 +130,7 @@ Outputs:
       - Arn
     Export:
       Name:
-        Fn::Sub: ${AppName}-get-data-arn
+        Fn::Sub: ${AppName}-get-controller-arn
   PutDataArn:
     Description: ARN of Put Data Lambda Function
     Value:
@@ -139,4 +139,4 @@ Outputs:
       - Arn
     Export:
       Name:
-        Fn::Sub: ${AppName}-put-data-arn
+        Fn::Sub: ${AppName}-put-controller-arn
