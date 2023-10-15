@@ -25,9 +25,7 @@ variable "app_name" {
 variable "api_lambda_functions" {
   default = [
     "get-controller",
-    "put-controller",
-    "patch-controller",
-    "delete-controller"
+    "put-controller"
   ]
 }
 
