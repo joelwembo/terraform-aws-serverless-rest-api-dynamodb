@@ -11,7 +11,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket         = "cloudapp-terraform-state"
-    key            = "employees-api.tfstate"
+    key            = "products-api.tfstate"
     dynamodb_table = "my-terraform-lock"
     region         = "ap-southeast-1"
     encrypt        = "true"

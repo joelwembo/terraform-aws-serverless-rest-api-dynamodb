@@ -8,7 +8,7 @@ variable "aws_region" {
 
 # S3 bucket for converted SAM templates
 variable "sam_code_bucket" {
-  default = "CloudApp-ecommerce-98"
+  default = "cloudapp-ecommerce"
 }
 
 
