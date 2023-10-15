@@ -4,7 +4,7 @@
 resource "aws_iam_role" "apigateway_execution_role" {
   name               = "${var.app_name}-apigateway-role"
   path               = "/"
-  description        = "Role assigned to API Gateway"
+  description        = "Role assigned for API Gateway"
   assume_role_policy = data.aws_iam_policy_document.apigateway_trust_policy.json
 }
 
@@ -54,17 +54,13 @@ resource "aws_api_gateway_deployment" "employees_rest_api_deployment" {
   }
 }
 
-# ----------------------------------------------------------------------
-# API Key
-# ----------------------------------------------------------------------
+
 resource "aws_api_gateway_api_key" "api_key" {
   name        = "${var.app_name}-key"
   description = "API Key for Employees API"
 }
 
-# ----------------------------------------------------------------------
-# Usage Plan
-# ----------------------------------------------------------------------
+
 resource "aws_api_gateway_usage_plan" "usage_plan" {
   name        = "${var.app_name}-usage-plan-${timestamp()}"
   description = "Usage plan for Employees"

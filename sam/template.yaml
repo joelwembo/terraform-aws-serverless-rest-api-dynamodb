@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: SAM Template for Employees Rest API
+Description: SAM Template for Saas E-Commerce Backend Rest API
 
 Parameters:
   AppName:
@@ -15,10 +15,10 @@ Globals:
       - !Ref LambdaLayer
     Environment:
       Variables:
-        EMPLOYEES_DDB_TABLE: !Ref EmployeesDDBTable
+        productS_DDB_TABLE: !Ref productsDDBTable
 
 Resources:
-  EmployeesDDBTable:
+  productsDDBTable:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: !Sub '${AppName}-table'
@@ -85,15 +85,15 @@ Resources:
                 Action:
                   - dynamodb:*
                 Resource:
-                  - !Sub 'arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${EmployeesDDBTable}/*'
-                  - !Sub 'arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${EmployeesDDBTable}'
+                  - !Sub 'arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${productsDDBTable}/*'
+                  - !Sub 'arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${productsDDBTable}'
   GetData:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: !Sub '${AppName}-get-data'
       Handler: index.lambdaHandler
       Runtime: nodejs16.x
-      Description: Get employee data from Dynamo DB
+      Description: Get product data from Dynamo DB
       CodeUri: functions/get-data/
       Role:
         Fn::GetAtt: LambdaRole.Arn
@@ -103,7 +103,7 @@ Resources:
       FunctionName: !Sub '${AppName}-put-data'
       Handler: index.lambdaHandler
       Runtime: nodejs16.x
-      Description: Add employee data to Dynamo DB
+      Description: Add product data to Dynamo DB
       CodeUri: functions/put-data/
       Role:
         Fn::GetAtt: LambdaRole.Arn
