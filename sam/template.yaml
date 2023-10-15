@@ -24,19 +24,19 @@ Resources:
       TableName: !Sub '${AppName}-table'
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
-        - AttributeName: email
+        - AttributeName: name
           AttributeType: S
-        - AttributeName: department
+        - AttributeName: description
           AttributeType: S
       KeySchema:
-        - AttributeName: email
+        - AttributeName: name
           KeyType: HASH
-        - AttributeName: department
+        - AttributeName: description
           KeyType: RANGE
       GlobalSecondaryIndexes:
-        - IndexName: department-index
+        - IndexName: description-index
           KeySchema:
-            - AttributeName: department
+            - AttributeName: description
               KeyType: HASH
           Projection:
             ProjectionType: ALL

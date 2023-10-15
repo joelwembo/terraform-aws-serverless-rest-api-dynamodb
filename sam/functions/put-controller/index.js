@@ -24,7 +24,7 @@ exports.lambdaHandler = async (event, context) => {
 
 			// DDb put data parameters
 			const putDataParams = {
-				TableName: process.env.EMPLOYEES_DDB_TABLE,
+				TableName: process.env.PRODUCTS_DDB_TABLE,
 				Item: event,
 			};
 

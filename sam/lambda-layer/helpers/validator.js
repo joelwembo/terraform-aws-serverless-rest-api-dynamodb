@@ -6,23 +6,25 @@ const getDataSchema = {
 	id: '/getdata',
 	type: 'object',
 	properties: {
-		email: { type: 'string', minLength: 1 },
-		department: { type: 'string', minLength: 1 },
+		name: { type: 'string', minLength: 1 },
+		description: { type: 'string', minLength: 1 },
 	},
-	anyOf: [{ required: ['email'] }, { required: ['department'] }],
+	anyOf: [{ required: ['name'] }, { required: ['description'] }],
 };
 
 const putDataSchema = {
 	id: '/putdata',
 	type: 'object',
 	properties: {
-		email: { type: 'string', minLength: 1 },
-		firstname: { type: 'string', minLength: 1 },
-		lastname: { type: 'string', minLength: 1 },
-		jobTitle: { type: 'string', minLength: 1 },
+		name: { type: 'string', minLength: 1 },
+		description: { type: 'string', minLength: 1 },
+		url: { type: 'string', minLength: 1 },
+		tags: { type: 'string', minLength: 1 },
 		department: { type: 'string', minLength: 1 },
+		price: { type: 'number', minLength: 1 },
+		
 	},
-	required: ['email', 'firstname', 'lastname', 'jobTitle', 'department'],
+	required: ['name', 'description', 'price'],
 };
 
 // Add schema definition to the validator
